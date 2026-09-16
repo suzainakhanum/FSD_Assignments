@@ -1,0 +1,21 @@
+{
+  "name": "cafe-hub",
+  "version": "1.0.0",
+  "description": "A beginner-friendly cafe directory using Express and EJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": ["node", "express", "ejs", "fsd"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
