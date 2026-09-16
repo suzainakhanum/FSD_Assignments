@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Hub | All Cafes</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <main class="page-content">
+        <section class="page-heading">
+            <p class="eyebrow">THE CAFE DIRECTORY</p>
+            <h1>All Cafes</h1>
+            <p>Find a place that matches your mood, menu, and budget.</p>
+        </section>
+
+        <section class="cafe-grid">
+            <% cafes.forEach(cafe => { %>
+                <article class="cafe-card">
+                    <img src="<%= cafe.image %>" alt="Placeholder image for <%= cafe.name %>">
+                    <div class="cafe-card-content">
+                        <div class="card-topline">
+                            <span class="category"><%= cafe.category %></span>
+                            <span class="rating">★ <%= cafe.rating %></span>
+                        </div>
+                        <h3><%= cafe.name %></h3>
+                        <p class="location">⌖ <%= cafe.location %></p>
+                        <p class="price">Price range: <%= cafe.priceRange %></p>
+                        <a class="button secondary-button" href="/cafe/<%= cafe.id %>">View Details</a>
+                    </div>
+                </article>
+            <% }); %>
+        </section>
+    </main>
+
+    <%- include('partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Hub | <%= cafe ? cafe.name : 'Cafe Not Found' %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <main class="page-content">
+        <% if (!cafe) { %>
+            <section class="empty-state">
+                <div class="empty-icon">☕</div>
+                <p class="eyebrow">404 ERROR</p>
+                <h1>Cafe Not Found</h1>
+                <p>We could not find a cafe with that ID.</p>
+                <a class="button primary-button" href="/cafes">Back to Cafes</a>
+            </section>
+        <% } else { %>
+            <a class="back-link" href="/cafes">← Back to all cafes</a>
+            <section class="cafe-details">
+                <img class="details-image" src="<%= cafe.image %>" alt="Placeholder image for <%= cafe.name %>">
+                <div class="details-content">
+                    <p class="eyebrow"><%= cafe.category %></p>
+                    <h1><%= cafe.name %></h1>
+                    <div class="details-meta">
+                        <span>★ <%= cafe.rating %> / 5</span>
+                        <span>⌖ <%= cafe.location %></span>
+                        <span><%= cafe.priceRange %></span>
+                    </div>
+                    <p class="hours"><strong>Opening hours:</strong> <%= cafe.openingHours %></p>
+                    <p class="details-description"><%= cafe.description %></p>
+                    <h2>Popular Items</h2>
+                    <ul class="popular-items">
+                        <% cafe.popularItems.forEach(item => { %>
+                            <li><%= item %></li>
+                        <% }); %>
+                    </ul>
+                    <button class="button primary-button" type="button">♡ Add to Favorites</button>
+                </div>
+            </section>
+        <% } %>
+    </main>
+
+    <%- include('partials/footer') %>
+</body>
+</html>
