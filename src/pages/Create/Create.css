@@ -1,0 +1,257 @@
+/* Create Post Page Styles */
+.create-page {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+}
+
+.create-header {
+  margin-bottom: 24px;
+}
+
+.create-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* STEP 1 — Upload Zone */
+.create-upload-zone {
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 60px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+  min-height: 400px;
+}
+
+.create-upload-zone:hover {
+  border-color: var(--brand-blue);
+  background-color: var(--brand-blue-subtle);
+}
+
+.create-file-input {
+  display: none;
+}
+
+.create-upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.create-upload-icon {
+  color: var(--text-secondary);
+}
+
+.create-upload-heading {
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.create-upload-hint {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.create-select-btn {
+  background-color: var(--brand-blue);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s;
+}
+
+.create-select-btn:hover {
+  background-color: var(--brand-blue-hover);
+}
+
+/* STEP 2 — Caption + Preview */
+.create-caption-step {
+  display: flex;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--bg-primary);
+  box-shadow: var(--shadow-md);
+}
+
+/* Preview panel */
+.create-preview-area {
+  position: relative;
+  flex: 1.2;
+  background-color: #000;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-preview-img {
+  width: 100%;
+  height: 100%;
+  max-height: 600px;
+  object-fit: contain;
+}
+
+.create-remove-img-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.create-remove-img-btn:hover {
+  background: rgba(0,0,0,0.85);
+}
+
+/* Form panel */
+.create-form-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  min-width: 280px;
+  max-width: 380px;
+}
+
+.create-user-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.create-user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.create-user-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.create-caption-input {
+  width: 100%;
+  border: none;
+  resize: none;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background: transparent;
+  padding: 0;
+  margin-bottom: 4px;
+  outline: none;
+}
+
+.create-caption-input::placeholder {
+  color: var(--text-muted);
+}
+
+.create-char-count {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.create-divider {
+  height: 1px;
+  background-color: var(--border-subtle);
+  margin: 12px 0;
+}
+
+/* Location row */
+.create-location-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.create-location-icon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.create-location-input {
+  flex: 1;
+  border: none;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: transparent;
+  outline: none;
+}
+
+.create-location-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Action buttons */
+.create-share-btn {
+  width: 100%;
+  background-color: var(--brand-blue);
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: var(--radius-md);
+  margin-top: 14px;
+  transition: background-color 0.15s, opacity 0.15s;
+}
+
+.create-share-btn:hover:not(:disabled) {
+  background-color: var(--brand-blue-hover);
+}
+
+.create-share-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.create-discard-btn {
+  width: 100%;
+  color: var(--like-red);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: var(--radius-md);
+  transition: background-color 0.15s;
+}
+
+.create-discard-btn:hover {
+  background-color: rgba(237, 73, 86, 0.07);
+}
+
+@media (max-width: 768px) {
+  .create-caption-step {
+    flex-direction: column;
+  }
+
+  .create-form-area {
+    max-width: 100%;
+  }
+
+  .create-page {
+    padding-bottom: 72px;
+  }
+}
