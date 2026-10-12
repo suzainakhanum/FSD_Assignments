@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Hub | Profile</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <main class="page-content narrow-content">
+        <section class="profile-card">
+            <div class="avatar" aria-label="Cafe enthusiast avatar">☕</div>
+            <p class="eyebrow">CAFE ENTHUSIAST</p>
+            <h1><%= username %></h1>
+            <p class="profile-email"><%= email %></p>
+
+            <div class="profile-stats">
+                <div>
+                    <strong><%= favoriteCafe %></strong>
+                    <span>Favorite Cafe</span>
+                </div>
+                <div>
+                    <strong><%= favoriteCategory %></strong>
+                    <span>Favorite Category</span>
+                </div>
+                <div>
+                    <strong><%= cafesVisited %></strong>
+                    <span>Cafes Visited</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <%- include('partials/footer') %>
+</body>
+</html>

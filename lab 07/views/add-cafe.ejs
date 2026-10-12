@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Hub | Add Cafe</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <main class="page-content narrow-content">
+        <section class="page-heading">
+            <p class="eyebrow">SHARE A LOCAL GEM</p>
+            <h1>Add a New Cafe</h1>
+            <p>Enter the cafe details below to add it to the directory.</p>
+        </section>
+
+        <form class="cafe-form" action="/add-cafe" method="POST">
+            <label for="name">Cafe Name</label>
+            <input id="name" name="name" type="text" placeholder="e.g. Morning Roast" required>
+
+            <label for="location">Location</label>
+            <input id="location" name="location" type="text" placeholder="e.g. Bangalore" required>
+
+            <label for="category">Category</label>
+            <input id="category" name="category" type="text" placeholder="e.g. Coffee & Bakery" required>
+
+            <label for="rating">Rating</label>
+            <input id="rating" name="rating" type="number" min="0" max="5" step="0.1" placeholder="e.g. 4.5" required>
+
+            <label for="priceRange">Price Range</label>
+            <input id="priceRange" name="priceRange" type="text" placeholder="e.g. ₹₹" required>
+
+            <label for="openingHours">Opening Hours</label>
+            <input id="openingHours" name="openingHours" type="text" placeholder="e.g. 8:00 AM - 10:00 PM" required>
+
+            <label for="image">Image URL</label>
+            <input id="image" name="image" type="url" placeholder="https://placehold.co/600x400?text=New+Cafe">
+
+            <label for="description">Description</label>
+            <textarea id="description" name="description" rows="5" placeholder="Describe the cafe." required></textarea>
+
+            <button class="button primary-button" type="submit">Add Cafe</button>
+        </form>
+    </main>
+
+    <%- include('partials/footer') %>
+</body>
+</html>
