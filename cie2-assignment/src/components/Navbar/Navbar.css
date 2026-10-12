@@ -1,0 +1,157 @@
+/* Navbar Styles */
+.navbar-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-content {
+  width: 100%;
+  max-width: var(--app-max-width);
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo-text {
+  font-family: var(--brand-font);
+  font-size: 32px;
+  color: var(--text-primary);
+  line-height: 1;
+  letter-spacing: 0.5px;
+}
+
+/* Search Bar */
+.navbar-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 268px;
+}
+
+.navbar-search-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.navbar-search-input {
+  width: 100%;
+  height: 36px;
+  padding: 0 16px 0 38px;
+  background-color: #efefef;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  color: var(--text-primary);
+  transition: background-color var(--transition-fast);
+}
+
+.navbar-search-input:focus {
+  background-color: #ffffff;
+  outline: 1px solid var(--border-color);
+}
+
+.navbar-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Navbar Actions */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar-action-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: var(--radius-full);
+  color: var(--text-primary);
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.navbar-action-btn:hover {
+  background-color: var(--bg-hover);
+  transform: scale(1.05);
+}
+
+.navbar-action-btn.active {
+  color: var(--brand-blue);
+}
+
+.notification-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--like-red);
+  border-radius: 50%;
+  border: 1.5px solid var(--bg-primary);
+}
+
+/* Profile button avatar */
+.navbar-profile-btn {
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: border-color var(--transition-fast);
+}
+
+.navbar-profile-btn.active-avatar {
+  border-color: var(--text-primary);
+}
+
+.navbar-avatar-img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Hide desktop navbar brand if desktop sidebar is visible */
+@media (min-width: 769px) {
+  .navbar-container {
+    display: none; /* Desktop uses left Sidebar */
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    display: flex;
+  }
+  
+  .navbar-search {
+    display: none; /* Hide search input on mobile header to save space */
+  }
+  
+  .navbar-logo-text {
+    font-size: 28px;
+  }
+
+  .navbar-actions {
+    gap: 10px;
+  }
+}

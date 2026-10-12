@@ -1,0 +1,14 @@
+{
+  "name": "fullstack-react-bootstrap-app",
+  "version": "1.0.0",
+  "description": "Full-stack React-Bootstrap Client and Express Server running on separate ports",
+  "scripts": {
+    "server": "node --watch server/server.js",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"cyan.bold,magenta.bold\" \"npm run server\" \"npm run client\"",
+    "start": "node server/server.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.4"
+  }
+}
